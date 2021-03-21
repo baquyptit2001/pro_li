@@ -69,9 +69,12 @@ $(function () {
   });
   $(".product-list-right-prod-list-display-list").show();
   $(".product-list-right-prod-list-display-menu").hide();
+  $(".on-target").prop('disabled', true);
   $(".product-list-right-prod-top-display-btn").click(function () {
     $(this).addClass("on-target");
     $(this).siblings().removeClass("on-target");
+    $(this).prop('disabled', true);
+    $(this).siblings().prop('disabled', false);
     $(".product-list-right-prod-list-display-list").toggle("fade", "fast", "swing");
     $(".product-list-right-prod-list-display-menu").toggle("fade", "fast", "swing");
   });
