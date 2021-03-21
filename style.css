@@ -1296,6 +1296,7 @@ header .left-bor-header form:hover input {
     border-left: none;
     border-color: #d1d1d1;
     color: #d1d1d1;
+    z-index: 0 !important;
 }
 
 .product-list-left-menu-title{
@@ -1686,6 +1687,7 @@ header .left-bor-header form:hover input {
     font-size: 14px;
     color: #fff;
     background: #c8aa7b;
+    z-index: 0 !important;
 }
 
 .middle-footer .btn:hover {
