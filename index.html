@@ -16,6 +16,10 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
   </script>
@@ -87,9 +91,9 @@
     }
   </style>  
   <div id="wrap">
-    <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
-      <button onclick="w3_close()" class="res-head-btn w3-bar-item w3-large d-flex justify-content-between"><a href="#" class=""><img src="Brand.png" alt=""></a><p>X</p></button>
-      <hr style="background-color: #5e5a54 !important;">
+    <div class="w3-sidebar w3-bar-block w3-border-right animate__animated animate__fadeIn animate__faster" style="display:none" id="mySidebar">
+      <button class="res-head-btn w3-bar-item w3-large d-flex justify-content-between"><a href="#" class=""><img src="Brand.png" alt=""></a><p onclick="w3_close()">X</p></button>
+      <hr>
       <div class="top-header">
         <ul class="ml-auto">
           <li class="nav-item">
