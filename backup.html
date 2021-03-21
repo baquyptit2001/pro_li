@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product List</title>
+  <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+  <link rel="icon" href="title.png" type="image/icon type">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="uicons-regular-rounded.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+  <script src="js.js"></script>
+  <script src="https://kit.fontawesome.com/9fd97b7f3f.js" crossorigin="anonymous"></script>
+  <script data-search-pseudo-elements defer src="https://use.fontawesome.com/releases/latest/js/all.js"
+    integrity="sha384-L469/ELG4Bg9sDQbl0hvjMq8pOcqFgkSpwhwnslzvVVGpDjYJ6wJJyYjvG3u8XW7" crossorigin="anonymous">
+  </script>
+  <script src="semantic/dist/semantic.min.js"></script>
+</head>
+
+<body>
+  <style>
+    .w3-teal {
+      display: none;
+    }
+
+    @media (max-width: 1199.98px) {
+      header {
+        display: none;
+      }
+      .w3-teal {
+        display: block;
+        background-color: #5e5a54 !important;
+      }
+      .res-head-btn{
+        background-color: #5e5a54 !important;
+        justify-items: end;
+      }
+      .w3-sidebar .top-header{
+        height: 100% !important;
+        background-color: #5e5a54 !important;
+        z-index: 999999999999 !important;
+      }
+      .w3-sidebar .top-header ul{
+        list-style: none;
+        padding-left: 0;
+      }
+      .w3-sidebar .top-header ul li{
+        margin-left: 0;
+      }
+    }
+  </style>
+  <div id="wrap">
+    <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+      <button onclick="w3_close()" class="res-head-btn w3-bar-item w3-large">Close &times;</button>
+      <div class="top-header">
+        <a href="#" class=""><img src="Brand.png" alt=""></a>
+        <ul class="ml-auto">
+          <li class="nav-item">
+            <a class="nav-link on-page" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+          <li class="nav-item">
+            <!-- Button trigger modal -->
+            <a class="nav-link" onclick="document.getElementById('id01').style.display='block'">Account</a>
+
+            <!-- Modal -->
+
+            <div id="id01" class="w3-modal">
+              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:900px">
+
+                <div class="w3-center acount-header" onclick="document.getElementById('id01').style.display='none'">
+                  <span>Login</span>
+                </div>
+                <div class="w3-center account-login-form">
+                  <div class="account-login-form-title">
+                    <strong>Welcome back!</strong>
+                    <p>Login by entering the information below.</p>
+                  </div>
+                  <div class="account-login-form-input">
+                    <input type="email" placeholder="Email address *">
+                    <input type="password" placeholder="Password *">
+                  </div>
+                  <div class="account-login-form-option">
+                    <div class="d-flex justify-content-between">
+                      <span><input type="radio" name="" id="remember-me"><span
+                          style="padding-left: 5px;"></span><label for="remember-me">Remember me</label></span>
+                      <span>Forgoten password ?</span>
+                    </div>
+                  </div>
+                  <div class="account-login-form-btn">
+                    <button>Continue</button>
+                  </div>
+                  <p class="account-login-form-create">
+                    Don't have account ?. <span><a href="">Create on here</a></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item dropdown left-bor-header">
+            <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-shopping-bag"></i>
+              <span class="cart-quantity">2</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="w3-teal">
+      <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+    </div>
+    <header>
+      <div class="top-header">
+        <nav class="navbar navbar-expand-lg">
+          <a href="#" class="navbar-brand"><img src="Brand.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link on-page" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Product</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Blog</a>
+              </li>
+              <li class="nav-item">
+                <!-- Button trigger modal -->
+                <a class="nav-link" onclick="document.getElementById('id01').style.display='block'">Account</a>
+
+                <!-- Modal -->
+
+                <div id="id01" class="w3-modal">
+                  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:900px">
+
+                    <div class="w3-center acount-header" onclick="document.getElementById('id01').style.display='none'">
+                      <span>Login</span>
+                    </div>
+                    <div class="w3-center account-login-form">
+                      <div class="account-login-form-title">
+                        <strong>Welcome back!</strong>
+                        <p>Login by entering the information below.</p>
+                      </div>
+                      <div class="account-login-form-input">
+                        <input type="email" placeholder="Email address *">
+                        <input type="password" placeholder="Password *">
+                      </div>
+                      <div class="account-login-form-option">
+                        <div class="d-flex justify-content-between">
+                          <span><input type="radio" name="" id="remember-me"><span
+                              style="padding-left: 5px;"></span><label for="remember-me">Remember me</label></span>
+                          <span>Forgoten password ?</span>
+                        </div>
+                      </div>
+                      <div class="account-login-form-btn">
+                        <button>Continue</button>
+                      </div>
+                      <p class="account-login-form-create">
+                        Don't have account ?. <span><a href="">Create on here</a></span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item left-bor-header">
+                <form action="">
+                  <input type="search">
+                  <i class="fa fa-search"></i>
+                </form>
+              </li>
+              <li class="nav-item dropdown left-bor-header">
+                <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-shopping-bag"></i>
+                  <span class="cart-quantity">2</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <section class="page-title">
+      <div class="container-fluid">
+        <div class="page-title-info text-center">
+          <h2>Product List</h2>
+          <p><a href="#">Home</a><span style="padding: 0 10px;">\\</span><a href="#">Product</a></p>
+        </div>
+      </div>
+      <hr>
+      <div class="container">
+        <div class="row page-title-media justify-content-center">
+          <p>Share this page: <span style="padding: 0 10px;"></span>
+            <div class="page-title-media-icon"><a href="#"><i class="fab fa-facebook-f"></i></a></div>
+            <div class="page-title-media-icon"><a href="#"><i class="fab fa-google-plus-g"></i></a></div>
+            <div class="page-title-media-icon"><a href="#"><i class="fab fa-twitter"></i></a></div>
+          </p>
+        </div>
+      </div>
+    </section>
+    <main>
+      <div class="container">
+        <div class="product-list-wrap">
+          <div class="row">
+            <div class="col-lg-3 product-list-left-menu">
+              <div class="left-menu-wrap">
+                <div class="product-list-left-menu-search">
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search ..." aria-label=""
+                      aria-describedby="basic-addon1">
+                    <div class="input-group-prepend">
+                      <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-list-left-menu-cate-list">
+                  <div class="product-list-left-menu-title">
+                    Categories
+                  </div>
+                  <div class="product-list-left-menu-hr">
+                  </div>
+                  <div class="product-list-left-menu-cate-item">
+                    <a href="#" class="justify-content-between w-100 d-flex flex-wrap"><span
+                        class="product-list-left-menu-cate-item-name d-inline-block">Marble cake</span><span
+                        class="product-list-left-menu-cate-item-quantity d-inline-block">69</span></a>
+                  </div>
+                  <div class="product-list-left-menu-cate-item">
+                    <a href="#" class="justify-content-between w-100 d-flex flex-wrap"><span
+                        class="product-list-left-menu-cate-item-name d-inline-block">Spiced carrot cake</span><span
+                        class="product-list-left-menu-cate-item-quantity d-inline-block">96</span></a>
+                  </div>
+                  <div class="product-list-left-menu-cate-item">
+                    <a href="#" class="justify-content-between w-100 d-flex flex-wrap"><span
+                        class="product-list-left-menu-cate-item-name d-inline-block">Chocolate pudding cake</span><span
+                        class="product-list-left-menu-cate-item-quantity d-inline-block">66</span></a>
+                  </div>
+                  <div class="product-list-left-menu-cate-item">
+                    <a href="#" class="justify-content-between w-100 d-flex flex-wrap"><span
+                        class="product-list-left-menu-cate-item-name d-inline-block">Lemon ginger bundt cake</span><span
+                        class="product-list-left-menu-cate-item-quantity d-inline-block">99</span></a>
+                  </div>
+                </div>
+                <div class="product-list-left-menu-filter">
+                  <div class="product-list-left-menu-title">
+                    Filter by price
+                    <div class="product-list-left-menu-hr"></div>
+                  </div>
+                  <div class="product-list-left-menu-filter-slider">
+                    <div id="slider-range"></div>
+                    <p class="d-flex product-list-left-menu-filter-slider-price">
+                      <span>Price:</span>
+                      <input type="text" id="amount" readonly style="border:0;">
+                      <button class="product-list-left-menu-filter-slider-price-filter-btn">Filter</button>
+                    </p>
+                  </div>
+                </div>
+                <div class="product-list-left-menu-top-prod">
+                  <div class="product-list-left-menu-title">
+                    Top product
+                    <div class="product-list-left-menu-hr"></div>
+                  </div>
+                  <div class="product-list-left-menu-top-prod-info">
+                    <div class="row">
+                      <div class="col-4">
+                        <div class="product-list-left-menu-top-prod-info-img">
+                          <img src="img/top-prod.jpg" alt="" class="w-100">
+                        </div>
+                      </div>
+                      <div class="col-8">
+                        <div class="product-list-left-menu-top-prod-info-detail">
+                          <p class="product-list-left-menu-top-prod-info-detail-name"><a href="#">Spiced carrot cake</a>
+                          </p>
+                          <p class="product-list-left-menu-top-prod-info-price">$5.00 <span
+                              style="padding-left: 10px;">$10.00</span></p>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="product-list-left-menu-top-prod-info-img">
+                          <img src="img/top-prod.jpg" alt="" class="w-100">
+                        </div>
+                      </div>
+                      <div class="col-8">
+                        <div class="product-list-left-menu-top-prod-info-detail">
+                          <p class="product-list-left-menu-top-prod-info-detail-name"><a href="#">Spiced carrot cake</a>
+                          </p>
+                          <p class="product-list-left-menu-top-prod-info-price">$5.00 <span
+                              style="padding-left: 10px;">$10.00</span></p>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="product-list-left-menu-top-prod-info-img">
+                          <img src="img/top-prod.jpg" alt="" class="w-100">
+                        </div>
+                      </div>
+                      <div class="col-8">
+                        <div class="product-list-left-menu-top-prod-info-detail">
+                          <p class="product-list-left-menu-top-prod-info-detail-name"><a href="#">Spiced carrot cake</a>
+                          </p>
+                          <p class="product-list-left-menu-top-prod-info-price">$5.00 <span
+                              style="padding-left: 10px;">$10.00</span></p>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="product-list-left-menu-top-prod-info-img">
+                          <img src="img/top-prod.jpg" alt="" class="w-100">
+                        </div>
+                      </div>
+                      <div class="col-8">
+                        <div class="product-list-left-menu-top-prod-info-detail">
+                          <p class="product-list-left-menu-top-prod-info-detail-name"><a href="#">Spiced carrot cake</a>
+                          </p>
+                          <p class="product-list-left-menu-top-prod-info-price">$5.00 <span
+                              style="padding-left: 10px;">$10.00</span></p>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="product-list-left-menu-top-prod-info-img">
+                          <img src="img/top-prod.jpg" alt="" class="w-100">
+                        </div>
+                      </div>
+                      <div class="col-8">
+                        <div class="product-list-left-menu-top-prod-info-detail">
+                          <p class="product-list-left-menu-top-prod-info-detail-name"><a href="#">Spiced carrot cake</a>
+                          </p>
+                          <p class="product-list-left-menu-top-prod-info-price">$5.00 <span
+                              style="padding-left: 10px;">$10.00</span></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-list-left-menu-tags">
+                  <div class="product-list-left-menu-title">
+                    Tags
+                    <div class="product-list-left-menu-hr"></div>
+                  </div>
+                  <div class="product-list-left-menu-tags-list">
+                    <a href="#" id="" class="product-list-left-menu-tags-list-detail d-inline-block">Bagel</a>
+                    <a href="#" id="" class="product-list-left-menu-tags-list-detail d-inline-block">Bread stick</a>
+                    <a href="#" id="" class="product-list-left-menu-tags-list-detail d-inline-block">Croissant</a>
+                    <a href="#" id="" class="product-list-left-menu-tags-list-detail d-inline-block">French bread</a>
+                    <a href="#" id="" class="product-list-left-menu-tags-list-detail d-inline-block">Challah</a>
+                    <a href="#" id="" class="product-list-left-menu-tags-list-detail d-inline-block">Rolls</a>
+                    <a href="#" id="" class="product-list-left-menu-tags-list-detail d-inline-block">Milk</a>
+                    <a href="#" id="" class="product-list-left-menu-tags-list-detail d-inline-block">Wheat bread</a>
+                    <a href="#" id="" class="product-list-left-menu-tags-list-detail d-inline-block">Swiss roll</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-9 product-list-right-prod">
+              <div class="right-list-wrap">
+                <div class="product-list-right-prod-top d-flex justify-content-between">
+                  <div class="product-list-right-prod-top-show">
+                    Showing 1-12 of 24 results
+                  </div>
+                  <div class="product-list-right-prod-top-display">
+                    <span>Sort by:</span>
+                    <span style="padding-left: 5px;"></span>
+                    <select name="" id="">
+                      <option value="">Default sorting</option>
+                      <option value="">A to Z</option>
+                      <option value="">Z to A</option>
+                      <option value="">Higher by price</option>
+                      <option value="">Lower by price</option>
+                    </select>
+                    <span style="padding-left: 5px;"></span>
+                    <button class="product-list-right-prod-top-display-btn"><i class="fas fa-list"></i></button>
+                    <span style="padding-left: 5px;"></span>
+                    <button class="product-list-right-prod-top-display-btn on-target"><i
+                        class="fas fa-bars"></i></button>
+                  </div>
+                </div>
+                <div class="product-list-right-prod-list">
+                  <div class="row product-list-right-prod-list-display-list">
+                    <div class="col-4">
+                      <div class="card w-100 product-list-right-prod-list-item">
+                        <div class="product-list-right-prod-list-item-info">
+                          <img class="card-img-top w-100" src="img/pro_list.jpg" alt="Card image cap">
+                          <div class="card-body text-center">
+                            <h5 class="card-title product-list-right-prod-list-item-name"><a href="#">Bread stick</a>
+                            </h5>
+                            <p class="card-text product-list-right-prod-list-item-price">$17.00</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="card w-100 product-list-right-prod-list-item">
+                        <div class="product-list-right-prod-list-item-info">
+                          <img class="card-img-top w-100" src="img/pro_list.jpg" alt="Card image cap">
+                          <div class="card-body text-center">
+                            <h5 class="card-title product-list-right-prod-list-item-name"><a href="#">Bread stick</a>
+                            </h5>
+                            <p class="card-text product-list-right-prod-list-item-price">$17.00</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="card w-100 product-list-right-prod-list-item">
+                        <div class="product-list-right-prod-list-item-info">
+                          <img class="card-img-top w-100" src="img/pro_list.jpg" alt="Card image cap">
+                          <div class="card-body text-center">
+                            <h5 class="card-title product-list-right-prod-list-item-name"><a href="#">Bread stick</a>
+                            </h5>
+                            <p class="card-text product-list-right-prod-list-item-price">$17.00</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row product-list-right-prod-list-display-menu">
+                    <div class="col-12">
+                      <div class="row product-list-right-prod-list-display-menu-item">
+                        <div class="col-3 product-list-right-prod-list-display-menu-item-img">
+                          <img src="img/pro_list.jpg" class="w-100" alt="">
+                        </div>
+                        <div class=" col-9 product-list-right-prod-list-display-menu-item-info">
+                          <p class="product-list-right-prod-list-display-menu-item-info-name">Spicy pumpkin bundt cake
+                          </p>
+                          <p class="product-list-right-prod-list-display-menu-item-info-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                              class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="product-list-right-prod-list-display-menu-item-info-rating-quanti">1.249
+                              Customer review</span>
+                          </p>
+                          <p class="product-list-right-prod-list-display-menu-item-info-price">$14.00</p>
+                          <p class="product-list-right-prod-list-display-menu-item-info-desc">Lorem ipsum dolor sit
+                            amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                            aliquip ex ea commodo consequat. </p>
+                          <button class="product-list-right-prod-list-display-menu-item-info-add-cart"><span><i
+                                class="fas fa-shopping-bag"></i></span> Add to cart</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="row product-list-right-prod-list-display-menu-item">
+                        <div class="col-3 product-list-right-prod-list-display-menu-item-img">
+                          <img src="img/pro_list.jpg" class="w-100" alt="">
+                        </div>
+                        <div class=" col-9 product-list-right-prod-list-display-menu-item-info">
+                          <p class="product-list-right-prod-list-display-menu-item-info-name">Spicy pumpkin bundt cake
+                          </p>
+                          <p class="product-list-right-prod-list-display-menu-item-info-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                              class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="product-list-right-prod-list-display-menu-item-info-rating-quanti">1.249
+                              Customer review</span>
+                          </p>
+                          <p class="product-list-right-prod-list-display-menu-item-info-price">$14.00</p>
+                          <p class="product-list-right-prod-list-display-menu-item-info-desc">Lorem ipsum dolor sit
+                            amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                            aliquip ex ea commodo consequat. </p>
+                          <button class="product-list-right-prod-list-display-menu-item-info-add-cart"><span><i
+                                class="fas fa-shopping-bag"></i></span> Add to cart</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="row product-list-right-prod-list-display-menu-item">
+                        <div class="col-3 product-list-right-prod-list-display-menu-item-img">
+                          <img src="img/pro_list.jpg" class="w-100" alt="">
+                        </div>
+                        <div class=" col-9 product-list-right-prod-list-display-menu-item-info">
+                          <p class="product-list-right-prod-list-display-menu-item-info-name">Spicy pumpkin bundt cake
+                          </p>
+                          <p class="product-list-right-prod-list-display-menu-item-info-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                              class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="product-list-right-prod-list-display-menu-item-info-rating-quanti">1.249
+                              Customer review</span>
+                          </p>
+                          <p class="product-list-right-prod-list-display-menu-item-info-price">$14.00</p>
+                          <p class="product-list-right-prod-list-display-menu-item-info-desc">Lorem ipsum dolor sit
+                            amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                            aliquip ex ea commodo consequat. </p>
+                          <button class="product-list-right-prod-list-display-menu-item-info-add-cart"><span><i
+                                class="fas fa-shopping-bag"></i></span> Add to cart</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <section class="head-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <div class="head-footer-title">
+                <a href=""><img src="Brand.png" alt=""></a>
+              </div>
+              <p>ThemeMu comes with powerful theme options, which empowers you to quickly and easily build incredible
+                store.</p>
+              <div class=" row head-footer-social-media justify-content-around">
+                <div class="circle">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+                <div class="circle">
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="circle">
+                  <a href="#"><i class="fab fa-vimeo-v"></i></a>
+                </div>
+                <div class="circle">
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="head-footer-title">
+                <h2>Contact</h2>
+              </div>
+              <div class="head-footer-contact">
+                <p><span><i class="fas fa-map-marker-alt"></i> Address: </span>105, B Block, West Street, London, BCA,
+                  UK</p>
+                <p><span><i class="fas fa-phone-alt"></i> Phone: </span><a href="tel:+84 973 043 445">+84 973 043
+                    445</a></p>
+                <p><span><i class="far fa-envelope"></i> Email: </span><a
+                    href="mailto:happyfarm@support.com">happyfarm@support.com</a></p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="head-footer-title">
+                <h2>Recent post</h2>
+              </div>
+              <div class="head-footer-recent">
+                <div class="row">
+                  <div class="col-4">
+                    <img src="/img/hai-tu.jpg" alt="" class="w-100">
+                  </div>
+                  <div class="col-8">
+                    <a href="">
+                      <p>Chào mừng Hải Tú đến với tiệm !</p>
+                    </a>
+                    <small>Jan 20, 2001</small>
+                  </div>
+                  <div class="col-4">
+                    <img src="/img/tbt.jpg" alt="" class="w-100">
+                  </div>
+                  <div class="col-8">
+                    <a href="">
+                      <p>Chào mừng Chiều Bảo Thâm đến với tiệm !</p>
+                    </a>
+                    <small>Jan 20, 2001</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="head-footer-title">
+                <h2>Photo in instagram</h2>
+              </div>
+              <div class="head-footer-title-instagram">
+                <div class="row">
+                  <div class="col-lg-4 col-6">
+                    <a href=""><img src="img/insta.jpg" alt="" class="w-100"></a>
+                  </div>
+                  <div class="col-lg-4 col-6">
+                    <a href=""><img src="img/insta1.jpg" alt="" class="w-100"></a>
+                  </div>
+                  <div class="col-lg-4 col-6">
+                    <a href=""><img src="img/insta2.png" alt="" class="w-100"></a>
+                  </div>
+                  <div class="col-lg-4 col-6">
+                    <a href=""><img src="img/insta3.jpeg" alt="" class="w-100"></a>
+                  </div>
+                  <div class="col-lg-4 col-6">
+                    <a href=""><img src="img/insta4.jpeg" alt="" class="w-100"></a>
+                  </div>
+                  <div class="col-lg-4 col-6">
+                    <a href=""><img src="img/insta5.jpg" alt="" class="w-100"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="middle-footer">
+            <div class="row">
+              <div class="col-3">
+                <p>Enter your email to get our</p>
+                <h3>Recipe of the day</h3>
+              </div>
+              <div class="col-9">
+                <div class="input-group mt-4">
+                  <input type="text" class="form-control" placeholder="Enter your email"
+                    aria-label="Recipient's username" aria-describedby="basic-addon2">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button">Submit <span
+                        style="padding-left: 10px;"></span><i class="fas fa-arrow-right"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="foot-footer">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-md-4">
+              <p class="copy-right">Copyright © 2019 Bakery - Designed by ThemeMu</p>
+            </div>
+            <div class="col-md-5 text-right">
+              <div class="else">
+                <a href="">Contact</a><span style="padding-left: 20px;"></span>
+                <a href="">Site map</a><span style="padding-left: 20px;"></span>
+                <a href="">Policy</a><span style="padding-left: 20px;"></span>
+                <a href="">Term of Use Privacy</a><span style="padding-left: 20px;"></span>
+                <a href="">Pay</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+  </div>
+</body>
+
+</html>
